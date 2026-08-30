@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -6,24 +7,48 @@
 
     <title>WheatCraft | قوانين السيرفر</title>
 
+    <!-- CounterAPI V2 -->
+    <script src="https://cdn.jsdelivr.net/npm/counterapi/dist/counter.browser.min.js"></script>
+
     <style>
+
+        /* =========================
+           SF ARABIC
+        ========================= */
+
+        @font-face {
+            font-family: "SF Arabic";
+            src: local("SF Arabic");
+            font-weight: 100 900;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            cursor: url("https://cur.cursors-4u.net/games/gam-13/gam1261.cur"), auto;
         }
 
         body {
             min-height: 100vh;
-            font-family: Arial, sans-serif;
+            font-family: "SF Arabic", Arial, sans-serif;
             color: white;
+
             background:
-                linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.88)),
+                linear-gradient(
+                    rgba(0,0,0,.72),
+                    rgba(0,0,0,.88)
+                ),
                 url("https://images.unsplash.com/photo-1605106702842-01a887a31122");
+
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
+
+        /* =========================
+           CONTAINER
+        ========================= */
 
         .container {
             width: 92%;
@@ -32,7 +57,9 @@
             padding: 60px 0;
         }
 
-        /* HEADER */
+        /* =========================
+           HEADER
+        ========================= */
 
         header {
             text-align: center;
@@ -46,7 +73,7 @@
         }
 
         header h1 span {
-            color: #55ff55;
+            color: #FFD700;
         }
 
         header p {
@@ -55,22 +82,27 @@
             font-size: 19px;
         }
 
-        /* SERVER BOX */
+        /* =========================
+           SERVER BOX
+        ========================= */
 
         .server-box {
             background: rgba(20,20,20,.94);
-            border: 2px solid #55ff55;
+            border: 2px solid #FFD700;
             border-radius: 16px;
             padding: 25px;
             text-align: center;
-            box-shadow: 0 0 30px rgba(85,255,85,.15);
+
+            box-shadow:
+                0 0 30px rgba(255,215,0,.15);
+
             margin-bottom: 25px;
         }
 
         .server-ip {
             font-size: 24px;
             font-weight: bold;
-            color: #55ff55;
+            color: #FFD700;
             margin-bottom: 15px;
         }
 
@@ -87,14 +119,21 @@
             border-radius: 9px;
             text-decoration: none;
             color: white;
-            background: #2d7d32;
+            background: #9c7a00;
             font-weight: bold;
-            transition: .2s;
+
+            transition:
+                transform .2s,
+                background .2s,
+                box-shadow .2s;
         }
 
         .button:hover {
             transform: translateY(-3px);
-            background: #3fa844;
+            background: #c9a900;
+
+            box-shadow:
+                0 5px 20px rgba(255,215,0,.25);
         }
 
         .discord {
@@ -105,7 +144,9 @@
             background: #4752c4;
         }
 
-        /* RULES */
+        /* =========================
+           RULES
+        ========================= */
 
         .rules {
             background: rgba(18,18,18,.94);
@@ -118,59 +159,93 @@
             text-align: center;
             margin-bottom: 25px;
             font-size: 30px;
-            color: #55ff55;
+            color: #FFD700;
         }
 
         .rule {
             background: rgba(255,255,255,.045);
-            border-right: 4px solid #55ff55;
+
+            border-right:
+                4px solid #FFD700;
+
             border-radius: 10px;
             padding: 18px;
             margin-bottom: 13px;
-            transition: .2s;
+
+            transition:
+                transform .2s,
+                background .2s,
+                box-shadow .2s;
         }
 
         .rule:hover {
-            transform: translateX(-4px);
-            background: rgba(85,255,85,.08);
+            transform: translateX(-5px);
+
+            background:
+                rgba(255,215,0,.08);
+
+            box-shadow:
+                0 0 15px rgba(255,215,0,.08);
         }
 
         .rule h2 {
             font-size: 20px;
             margin-bottom: 7px;
-            color: #55ff55;
+            color: #FFD700;
         }
 
         .rule p {
             color: #ddd;
-            line-height: 1.7;
+            line-height: 1.8;
             font-size: 16px;
         }
 
-        /* VISITS */
+        /* =========================
+           VISITS
+        ========================= */
 
         .visits {
             margin-top: 25px;
-            background: rgba(0,0,0,.8);
-            border: 1px solid rgba(85,255,85,.4);
+
+            background:
+                rgba(0,0,0,.82);
+
+            border:
+                1px solid rgba(255,215,0,.45);
+
             border-radius: 14px;
+
             padding: 22px;
+
             text-align: center;
+
+            box-shadow:
+                0 0 20px rgba(255,215,0,.08);
         }
 
         .visits-title {
             color: #ccc;
-            font-size: 17px;
+            font-size: 18px;
             margin-bottom: 8px;
         }
 
         #visits {
-            font-size: 35px;
-            font-weight: bold;
-            color: #55ff55;
+            font-size: 40px;
+            font-weight: 900;
+            color: #FFD700;
+
+            text-shadow:
+                0 0 15px rgba(255,215,0,.25);
         }
 
-        /* FOOTER */
+        .loading {
+            color: #aaa !important;
+            font-size: 25px !important;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             text-align: center;
@@ -179,7 +254,9 @@
             font-size: 14px;
         }
 
-        /* MOBILE */
+        /* =========================
+           MOBILE
+        ========================= */
 
         @media (max-width: 600px) {
 
@@ -198,23 +275,40 @@
             .server-ip {
                 font-size: 19px;
             }
+
+            #visits {
+                font-size: 32px;
+            }
         }
+
     </style>
 </head>
+
 
 <body>
 
 <div class="container">
 
-    <!-- HEADER -->
+    <!-- =========================
+         HEADER
+    ========================= -->
 
     <header>
-        <h1>⛏️ <span>WheatCraft</span></h1>
-        <p>📜 قوانين سيرفر ماينكرافت</p>
+
+        <h1>
+            ⛏️ <span>WheatCraft</span>
+        </h1>
+
+        <p>
+            📜 قوانين سيرفر ماينكرافت
+        </p>
+
     </header>
 
 
-    <!-- SERVER -->
+    <!-- =========================
+         SERVER
+    ========================= -->
 
     <div class="server-box">
 
@@ -235,6 +329,7 @@
                 class="button discord"
                 href="YOUR_DISCORD_LINK"
                 target="_blank"
+                rel="noopener noreferrer"
             >
                 💬 Discord
             </a>
@@ -244,7 +339,9 @@
     </div>
 
 
-    <!-- RULES -->
+    <!-- =========================
+         RULES
+    ========================= -->
 
     <div class="rules">
 
@@ -254,80 +351,106 @@
 
 
         <div class="rule">
+
             <h2>① الاحترام</h2>
+
             <p>
                 يمنع السب أو الإهانة أو التنمر على اللاعبين.
                 يجب احترام جميع أعضاء السيرفر.
             </p>
+
         </div>
 
 
         <div class="rule">
+
             <h2>② ممنوع الغش</h2>
+
             <p>
                 يمنع استخدام الهاكات أو أي برامج تمنح اللاعب
                 أفضلية غير عادلة.
             </p>
+
         </div>
 
 
         <div class="rule">
+
             <h2>③ ممنوع التخريب</h2>
+
             <p>
                 يمنع تخريب ممتلكات اللاعبين أو تدمير مبانيهم
                 بدون إذن.
             </p>
+
         </div>
 
 
         <div class="rule">
+
             <h2>④ ممنوع السرقة</h2>
+
             <p>
                 يمنع سرقة أغراض اللاعبين أو أخذ مواردهم
                 بدون موافقتهم.
             </p>
+
         </div>
 
 
         <div class="rule">
+
             <h2>⑤ ممنوع استغلال الأخطاء</h2>
+
             <p>
                 يمنع استغلال Bugs أو ثغرات السيرفر للحصول
                 على أموال أو أغراض بطريقة غير شرعية.
             </p>
+
         </div>
 
 
         <div class="rule">
+
             <h2>⑥ ممنوع الإزعاج</h2>
+
             <p>
                 يمنع إزعاج اللاعبين أو السبام في الشات
                 أو استخدام الرسائل بشكل مزعج.
             </p>
+
         </div>
 
 
         <div class="rule">
+
             <h2>⑦ احترام الإدارة</h2>
+
             <p>
                 يجب احترام قرارات الإدارة وعدم محاولة
                 استغلال الصلاحيات.
             </p>
+
         </div>
 
 
         <div class="rule">
+
             <h2>⑧ العقوبات</h2>
+
             <p>
                 مخالفة القوانين قد تؤدي إلى تحذير أو ميوت
                 أو كيك أو باند حسب نوع المخالفة.
             </p>
+
         </div>
 
     </div>
 
 
-    <!-- VISITS -->
+    <!-- =========================
+         VISITS
+    ========================= -->
 
     <div class="visits">
 
@@ -335,54 +458,110 @@
             👥 عدد زيارات الموقع
         </div>
 
-        <div id="visits">
-            ...
+        <div
+            id="visits"
+            class="loading"
+        >
+            جاري التحميل...
         </div>
 
     </div>
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
     <footer>
+
         © 2026 WheatCraft — جميع الحقوق محفوظة
+
     </footer>
 
 </div>
 
 
+<!-- =========================
+     COUNTER API V2
+========================= -->
+
 <script>
 
 async function updateVisits() {
 
+    const visitsElement =
+        document.getElementById("visits");
+
     try {
 
-        const response = await fetch(
-            "https://api.counterapi.dev/v1/wheatcraft-site/visits/up"
+        /*
+         * غيّر YOUR_WORKSPACE
+         * إلى اسم Workspace الخاص بك
+         * في CounterAPI
+         */
+
+        const counter =
+            new Counter({
+                workspace: "YOUR_WORKSPACE"
+            });
+
+
+        /*
+         * كل فتح للموقع يزيد العداد +1
+         */
+
+        const result =
+            await counter.up("website-visits");
+
+
+        /*
+         * CounterAPI V2 يرجع العدد
+         * داخل data.up_count
+         */
+
+        const count =
+            result.data.up_count;
+
+
+        visitsElement.textContent =
+            Number(count).toLocaleString("en-US");
+
+
+        visitsElement.classList.remove(
+            "loading"
         );
 
-        if (!response.ok) {
-            throw new Error("Counter API error");
-        }
-
-        const data = await response.json();
-
-        document.getElementById("visits").textContent =
-            Number(data.count).toLocaleString("en-US");
 
     } catch (error) {
 
-        console.error(error);
+        console.error(
+            "CounterAPI Error:",
+            error
+        );
 
-        document.getElementById("visits").textContent = "—";
+
+        visitsElement.textContent =
+            "—";
+
+
+        visitsElement.classList.remove(
+            "loading"
+        );
 
     }
 
 }
 
+
+/*
+ * تشغيل العداد عند فتح الصفحة
+ */
+
 updateVisits();
 
 </script>
 
+
 </body>
 </html>
+```
